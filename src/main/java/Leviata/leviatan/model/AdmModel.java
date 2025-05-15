@@ -3,39 +3,41 @@ package Leviata.leviatan.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
-
 @Entity
 @Table(name = "tbAdm")
 public class AdmModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAdm;
+    @Column(name = "id")
+    private int id;
 
     @NotBlank
-    private String admName;
+    @Column(name = "nome", length = 100)
+    private String nome;
 
+    @Column(name = "email", length = 100)
     private String email;
+
+    @Column(name = "senha", length = 255)
     private String senha;
 
-    @Column(name = "ativo")
-    private boolean ativo = true;
+    // Getters e Setters
 
-
-    public int getIdAdm() {
-        return idAdm;
+    public int getId() {
+        return id;
     }
 
-    public void setIdAdm(int idAdm) {
-        this.idAdm = idAdm;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getAdmName() {
-        return admName;
+    public String getNome() {
+        return nome;
     }
 
-    public void setAdmName(String admName) {
-        this.admName = admName;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -52,13 +54,5 @@ public class AdmModel {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
     }
 }

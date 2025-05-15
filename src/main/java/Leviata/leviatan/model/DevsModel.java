@@ -1,38 +1,35 @@
 package Leviata.leviatan.model;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "TbDevs")
+@Table(name = "tbDevs")
 public class DevsModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idDevsModel;
+    private int id;
 
     @NotBlank
     private String nome_empresa;
 
     @NotBlank
-    private String nome_respponsavel;
+    private String nome_responsavel;
 
     @NotBlank
-    private String email_empresa;
+    @Column(name = "email")
+    private String email;
 
-    String whatsapp;
-
-    @Column(name = "ativo")
-    private boolean ativo;
+    private String whatsapp;
 
 
-    public int getIdDevsModel() {
-        return idDevsModel;
+    public int getId() {
+        return id;
     }
 
-    public void setIdDevsModel(int idDevsModel) {
-        this.idDevsModel = idDevsModel;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome_empresa() {
@@ -43,20 +40,20 @@ public class DevsModel {
         this.nome_empresa = nome_empresa;
     }
 
-    public String getNome_respponsavel() {
-        return nome_respponsavel;
+    public String getNome_responsavel() {
+        return nome_responsavel;
     }
 
-    public void setNome_respponsavel(String nome_respponsavel) {
-        this.nome_respponsavel = nome_respponsavel;
+    public void setNome_responsavel(String nome_responsavel) {
+        this.nome_responsavel = nome_responsavel;
     }
 
-    public String getEmail_empresa() {
-        return email_empresa;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmail_empresa(String email_empresa) {
-        this.email_empresa = email_empresa;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getWhatsapp() {
@@ -65,13 +62,5 @@ public class DevsModel {
 
     public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
-    }
-
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
     }
 }

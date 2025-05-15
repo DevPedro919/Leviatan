@@ -1,4 +1,4 @@
-package Leviata.leviatan.model;
+package Leviatan.leviatan.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

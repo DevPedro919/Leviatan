@@ -1,4 +1,4 @@
-package Leviata.leviatan.dto;
+package Leviatan.leviatan.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

@@ -1,4 +1,4 @@
-package Leviata.leviatan;
+package Leviatan.leviatan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,37 +1,28 @@
-package Leviata.leviatan.model;
+package Leviatan.leviatan.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "tbCliente")
-public class ClienteModel {
+@Table(name = "tbAdm")
+public class AdmModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @NotBlank
-    @Size(max = 100)
+    @Column(name = "nome", length = 100)
     private String nome;
 
-    @NotBlank
-    @Email
-    @Size(max = 100)
+    @Column(name = "email", length = 100)
     private String email;
 
-    @NotBlank
-    @Size(max = 255)
+    @Column(name = "senha", length = 255)
     private String senha;
 
-    @NotBlank
-    @Size(max = 20)
-    private String telefone;
-
-    // Getters e setters
+    // Getters e Setters
 
     public int getId() {
         return id;
@@ -63,13 +54,5 @@ public class ClienteModel {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
     }
 }

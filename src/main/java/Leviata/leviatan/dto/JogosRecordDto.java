@@ -1,12 +1,16 @@
 package Leviata.leviatan.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 
 public record JogosRecordDto(
         @NotBlank String titulo,
-        @NotBlank String cargo,
-        @NotBlank @Pattern(regexp = "\\(\\d{2}\\)\\s?\\d{4,5}-\\d{4}", message = "Telefone deve estar no formato (XX) XXXX-XXXX ou (XX) XXXXX-XXXX") String telefoneFuncionario,
-        @NotBlank @Pattern(regexp = "\\d{11}", message = "CPF deve conter 11 dígitos numéricos") String cpfFuncionario
-)
-{}
+        String capa,
+        String descricao,
+        String historia,
+        String modalidade,
+        String video_demo,
+        @NotBlank Double preco,
+        @NotBlank String aprovado,
+        String arquivo
+) {
+}
